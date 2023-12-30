@@ -13,9 +13,6 @@ importers:
       next:
         specifier: ^14.0.3
         version: 14.0.4(react-dom@18.2.0)(react@18.2.0)
-      prettier:
-        specifier: ^3.1.1
-        version: 3.1.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -68,6 +65,9 @@ importers:
       husky:
         specifier: ^8.0.3
         version: 8.0.3
+      prettier:
+        specifier: ^3.1.1
+        version: 3.1.1
       prettier-plugin-packagejson:
         specifier: ^2.4.8
         version: 2.4.8(prettier@3.1.1)
@@ -85,6 +85,12 @@ importers:
         version: 5.3.3
 
   apps/discord-bot:
+    devDependencies:
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../config/tsconfig
+
+  apps/docs:
     devDependencies:
       tsconfig:
         specifier: workspace:*
@@ -3619,6 +3625,7 @@ packages:
       { integrity: sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw== }
     engines: { node: ">=14" }
     hasBin: true
+    dev: true
 
   /prop-types@15.8.1:
     resolution:
