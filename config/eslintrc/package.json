@@ -2,6 +2,7 @@
   "name": "eslintrc",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "echo 'Add dev script here'",
     "build": "echo 'Add build script here'",
