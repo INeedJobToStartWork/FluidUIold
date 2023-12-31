@@ -8,5 +8,8 @@
     "dev": "echo 'Add dev script here'",
     "lint": "echo 'Add lint script here'",
     "test": "echo 'Add test script here'"
+  },
+  "devDependencies": {
+    "webpack-merge": "^5.10.0"
   }
 }

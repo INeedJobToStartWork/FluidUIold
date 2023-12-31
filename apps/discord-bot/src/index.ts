@@ -14,7 +14,7 @@ client.once(Events.ClientReady, (readyClient: Client<true>) => {
 
 const redo = "red";
 if ("red" === redo) {
-  console.log("resd");
+  console.log("red");
 }
 
 client.login(envVariables.DISCORD_TOKEN);

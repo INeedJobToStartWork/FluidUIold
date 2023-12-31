@@ -1,5 +1,11 @@
 # discord-bot
 
+## 0.4.0
+
+### Minor Changes
+
+- Optimized Dev-refresh-app Plugin, refactor config
+
 ## 0.3.0
 
 ### Minor Changes

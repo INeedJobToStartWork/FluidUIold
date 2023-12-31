@@ -137,7 +137,11 @@ importers:
 
   config/tsconfig: {}
 
-  config/webpack: {}
+  config/webpack:
+    devDependencies:
+      webpack-merge:
+        specifier: ^5.10.0
+        version: 5.10.0
 
 packages:
   /@aashutoshrathi/word-wrap@1.2.6:
