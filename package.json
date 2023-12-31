@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky install",
+    "push": "cz",
     "start": "turbo start"
   },
   "lint-staged": {
