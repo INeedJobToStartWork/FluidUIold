@@ -7,7 +7,7 @@ export default {
   module: {
     rules: [
       {
-        exclude: /(node_modules|bower_components)/,
+        exclude: "/\\node_modules\\[^\\]+$/gusm",
         test: /\.(ts|mts)$/,
         use: { loader: "swc-loader" }
       }

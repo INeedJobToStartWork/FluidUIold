@@ -1,7 +1,8 @@
 {
-  "name": "webpack",
+  "name": "webpackrc",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "echo 'Add build script here'",
     "dev": "echo 'Add dev script here'",
