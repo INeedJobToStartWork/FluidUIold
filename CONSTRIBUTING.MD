@@ -1,0 +1,8 @@
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/ebe5b96e-c9d2-43b0-9523-ac3689470980)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/c8928325-0fb3-4e3b-888f-a66e2e759241)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/ca5f73b8-262d-4040-a9dc-09dedd64f25c)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/a37c1879-c789-43d8-8f4c-c2f0cd1ff35d)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/4d4c9a7e-f718-463d-9c3f-edde4ff04390)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/009a48b5-472d-493c-bec0-a3e5f1f8c797)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/cb1e0c58-9ee2-45e6-8e18-7c814f36305b)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/707168d8-84be-4d62-bd26-ab22372b23af)
