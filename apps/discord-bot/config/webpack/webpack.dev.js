@@ -10,7 +10,6 @@ export default merge(webpackDev, {
         compiler.hooks.assetEmitted.tap(
           "MyPlugin",
           (file, { content, source, outputPath, compilation, targetPath }) => {
-            console.log(file);
             if (file === "main.cjs") {
               fork(targetPath, { stdio: "inherit" });
             }
