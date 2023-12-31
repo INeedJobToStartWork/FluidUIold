@@ -1,13 +1,14 @@
-![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/aedabf33-f409-4362-904f-fec0957f2e50)
-![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/7fd5f12f-c244-438a-babe-13859b704b65)
-![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/23f02c99-5dd0-48c5-801a-7c2f7a131c55)
-![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/3da10a09-b266-44ff-a51f-c9c526632c50)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/f3bd9a9d-3d62-48ea-a46c-2542344ef50d)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/674e3040-7d9e-411c-861b-f042ede287b8)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/b4f07490-a0f3-46e4-80cb-3ae0d6b2071b)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/5e47f0b1-7809-427b-a724-109806615c27)
 
 ```bash copy
   npm i @fluidui/core
 ```
 
-![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/80edbe60-2a06-48bb-b1fe-8e3791bc15ac)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/dc7bfe7d-ec7b-4ea4-aaaf-d03a114cb803)
+
 
 <div align="center">
   <a href="example.com">
@@ -18,12 +19,15 @@
   </a>
 </div>
 
-![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/ed5f472d-634d-411e-9bec-929c5991f021)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/54ab07f3-6f0a-42e9-836c-cf96b816a559)
 
-<div align="center"><a href="example.com">CONSTRIBUTING.MD</a></div>
 
-![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/5949a3c5-7a12-4208-a77f-f5a70146240a)
+<div align="center"><a href="CONSTRIBUTING.md">CONSTRIBUTING.md</a></div>
+
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/ab645f34-0f1a-49c6-84bd-6301fa8d26f4)
+
 
 <div align="center"><a href="https://github.com/users/INeedJobToStartWork/projects/5/views/1?pane=issue&itemId=47071571">RoadMap</a></div>
 
-![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/c029602b-5420-4406-808a-fd767cdea570)
+![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/1ef36756-ef60-4084-bdcf-4023f8ce2845)
+
