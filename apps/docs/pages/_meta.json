@@ -1,0 +1,22 @@
+{
+  "OwnDesignSystem": {
+    "title": "Create Design System",
+    "type": "page"
+  },
+  "constributing": {
+    "title": "Constributing",
+    "type": "page"
+  },
+  "docs": {
+    "title": "Documentation",
+    "type": "page"
+  },
+  "fluidcli": {
+    "title": "FluidCLI",
+    "type": "page"
+  },
+  "index": {
+    "type": "page",
+    "display": "hidden"
+  }
+}

@@ -1,0 +1,148 @@
+import { Tabs, FileTree, Callout } from "nextra/components";
+
+# Code Patterns
+
+This is a collection of code patterns/standards that are used in Project. We use it for better code readability or
+efficiency.
+
+    ## Naming
+    Names of files/folders/functions/variables/api-endpoints etc. should be descriptive and meaningful.
+
+        ### Rules
+        - English Only
+        - Short
+        - High descriptive
+
+
+
+        ### Files/Folders/Functions/etc
+        | Type       | Naming Space | Example          |
+        | ---        | ---          | ---              |
+        | functions  | camelCase    | `getButtonColor` |
+        | components | PascalCase   | `Button`         |
+        | hooks      | PascalCase   | `useCounter`     |
+        | api-json   | snake_case   | `ban_time`       |
+        | variables  | camelCase    | `isButtonDisabled` |
+        | constants  | SCREAMING_SNAKE_CASE | `MAX_BUTTON_COUNT` |
+        | npm-packages | kebab-case | `fluidui-core`    |
+
+        ### Typescript
+        | Type       | Naming Space | Example       |
+        | ---        | ---          | ---           |
+        | interfaces | PascalCase   | `IButtonProps`|
+        | types      | PascalCase   | `TTime`       |
+
+    ## Exporting/Importing
+    Importing files should be short and readable.
+    To let our imports look like that:
+
+    ```typescript
+        // How we gonna import files from our folder outside
+        // ✅ Good
+            import { Button } from "FluidUI"
+        // ❌ Bad
+            import { Button } from "FluidUI/Components/Button.tsx"
+    ```
+    We use `index.ts` files to export files from folders.
+
+    <FileTree>
+        <FileTree.Folder name="Button" defaultOpen>
+            <FileTree.File name="index.ts" />
+            <FileTree.File name="Button.tsx"/>
+        </FileTree.Folder>
+    </FileTree>
+
+    <Tabs items={["index.ts","Button.tsx"]}>
+            <Tabs.Tab>
+                ```typescript
+                    export { default as Button } from "./Button"
+                ```
+            </Tabs.Tab>
+            <Tabs.Tab>
+                ```typescript
+                    const Button = () => {
+                        return <button>Button</button>
+                    }
+
+                    export default Button
+                ```
+            </Tabs.Tab>
+        </Tabs>
+
+    We use TDD(Test Driven Development) to write our code.
+    It helps us to write better code and to avoid bugs.
+
+    ## Compound Components
+    We use compound components to make our components more customizable,flexible, reusable and intuitive.
+
+    Example:
+    <Callout type="warning" emoji="⚠️">
+        This is example not real component, it's just for demonstration and doesnt include all patterns.
+    </Callout>
+    <Tabs items={['page.tsx','index.tsx','Card.tsx']}>
+        <Tabs.Tab>
+
+                ```tsx
+                    import { Card } from "FluidUI"
+
+                    const App = () => {
+                        return (
+                            <Card>
+                                <Card.Title>
+                                    Card Title
+                                </Card.Title>
+                                <Card.Body>
+                                   Card Text
+                                </Card.Body>
+                                <Card.Footer>
+                                    Footer of Card
+                                </Card.Footer>
+                            </Card>
+                        )
+                    }
+
+                    export default App
+
+                ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+                ```tsx
+                   export {default as Card} from "./Card"
+                ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+                ```tsx
+                    const Card = ({children}) => {
+                        return (
+                            <div className="card">
+                                {children}
+                            </div>
+                        )
+                    }
+
+                    Card.Title = ({children}) => {
+                        return (
+                            <div className="card-title">
+                                {children}
+                            </div>
+                        )
+                    }
+
+                    Card.Body = ({children}) => {
+                        return (
+                            <div className="card-body">
+                                {children}
+                            </div>
+                        )
+                    }
+
+                    Card.Footer = ({children}) => {
+                        return (
+                            <div className="card-footer">
+                                {children}
+                            </div>
+                        )
+                    }
+                ```
+        </Tabs.Tab>
+    </Tabs>

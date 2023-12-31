@@ -1,0 +1,102 @@
+import { Steps, Tabs } from "nextra/components";
+
+# Commiting
+
+Commiting is one of last steps before we push our code to the repository. Our Commit process is divided into few steps:
+
+How to execute commiting process?
+
+```bash copy
+   pnpm commit
+```
+
+<Steps>
+  ### Automate use Scripts (lint-staged) Automate our process of commiting. Passing every step of our commiting process.
+  ### Linter (Eslint) Checking our code for detect errors, bugs, stylistic errors, and suspicious constructs. ###
+  Formatter (Prettier) Formatting our code to be more readable - in one style at our repo. ### Changelogs (ChangeSet)
+  Documenting every changes in our project. ### Commit Description (Commitzen) Documenting every changes in our project.
+  ### Github Hooker Handler (Husky) If every step of our commiting process is passed, Husky gonna commit our code.
+</Steps>
+
+More about configuration of our commiting process you can find at [Environment](/constributing/Layers/enviroment)) page.
+
+## How to properly commit?
+
+In this section you can find some information about how to properly commit your code.
+
+### First Step - Linter (Eslint)
+
+Linters are tools that analyze source code to flag programming errors, bugs, stylistic errors, and suspicious
+constructs. It's the hardest and the most important step of our commiting process.
+
+induring coding process, we should use linter to check our code for errors, bugs, stylistic errors, and suspicious
+constructs.
+
+<Tabs items={["lint", "lint:fix"]}>
+  Detect errors etc.
+  <Tabs.Tab>```bash copy pnpm lint ```</Tabs.Tab>
+  <Tabs.Tab>Linter can also fix some of our errors. ```bash copy pnpm lint:fix ```</Tabs.Tab>
+</Tabs>
+
+More about linter you can find at [Environment](/constributing/Layers/enviroment#eslint-linter) page.
+
+### Second Step - Formatter (Prettier)
+
+As formatter we use Prettier.
+
+```bash copy
+    pnpm format
+```
+
+More about formatter you can find at [Environment](/constributing/Layers/enviroment#prettier-code-formatter) page.
+
+### Third Step - Changelogs (ChangeSet)
+
+Our Changelogs are handled by ChangeSet, changelogs should be created before every change, not only commit.
+
+    ##### Types of commits
+    Commit message should be structured as follows:
+
+    - `feat` - A new feature
+    - `fix` - A bug fix
+    - `docs` - Documentation only changes
+    - `style` - Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+    - `refactor` - A code change that neither fixes a bug nor adds a feature
+    - `perf` - A code change that improves performance
+    - `test` - Adding missing tests
+    - `chore` - Changes to the build process or auxiliary tools and libraries such as documentation generation
+
+    <Steps>
+        #### Add Changes
+        ```bash copy
+            pnpm changeset
+        ```
+        #### Generate Tags
+        ```bash copy
+            pnpm changeset tags
+        ```
+        #### Add Changes
+        ```bash copy
+            pnpm changeset publish
+        ```
+    </Steps>
+
+### Fourth Step - Commitzen
+
+Commitzen is a tool that helps us to create a commit message with prebuilded types.
+
+```bash copy
+    pnpm commitizen
+```
+
+### Fiveth Step - Github Hooker Handler (Husky)
+
+Commiting it's last step of our commiting process. Right now we `lint-stage` gonna check passing all of our steps.
+
+**To Commit**
+
+```bash copy
+    pnpm commit
+```
+
+scope - is optional. It's a name of the feature which you are working on.

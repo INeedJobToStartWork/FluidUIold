@@ -1,0 +1,246 @@
+import { Callout } from "nextra/components";
+
+# Enviroment
+
+The Enviroment layers is top layer of the Github Repo.<br/> This is maintained by TurboRepo and is used to manage the
+enviroment of the project.<br/>
+
+Our MonoRepo is managed by TurboRepo. To learn more about TurboRepo, visit
+[TurboRepo](https://turbo.build/repo/docs/handbook). We gonna here partly explain how we use TurboRepo in our project
+and link to official documentation.
+
+    ## Package manager
+    We use [`pnpm`](https://pnpm.io/) as our package manager.
+
+    What is [`pnpm`](https://pnpm.io/)?
+    pnpm is a fast and efficient package manager caching and reusing downloaded before packages.
+
+    ### Commands
+    | npm command   | pnpm equivalent |
+    | ---           | ---             |
+    | `npm install`   | `pnpm install`    |
+    | `npm i <pkg>`   | `pnpm add <pkg>`  |
+    | `npm run <cmd>` | `pnpm <cmd>`     |
+    [Source of table](https://pnpm.io/pnpm-cli#commands)
+
+    You can check out the [pnpm docs](https://pnpm.io/) for more information.<br/>
+    [Cursor.so](https://cursor.sh/) with builded-in AI will help you induring developing using in bash AI prompts.
+
+
+
+    ## Workspaces
+    Workspaces are separated repositiores which can share sources with each other.<br/>
+    Every of workspace has his own `package.json` file and need to install dependencies separately.
+
+    Every of workspace must have unique name and can be accessed by `@<workspace-name>`.
+    To Add workspace to project, you need to add it to `pnpm-workspace.yaml` file.
+
+    Example:
+
+    ```yaml copy
+        packages:
+            - "apps/*"
+            - "config/*"
+            - "packages/*"
+    ```
+    You can add empty workspace by `turbo gen` too:<br/>
+    (More about `turbo gen` at [TurboRepo docs](https://turbo.build/repo/docs/handbook/generators) and below
+    ```bash copy
+        turbo gen workspace --name <workspace-name>
+    ```
+
+    More about workspaces at [TurboRepo docs](https://turbo.build/repo/docs/handbook/workspaces)
+
+
+    This is how we solve sharing configs and code between projects - We declared folders in `config` as workspaces in `pnpm-workspace.yaml`.
+
+    ## Install Dependencies
+    Installing dependencies in a monorepo is a bit different than a regular repo.<br/>
+    In [TurboRepo](https://turbo.build/repo/docs/handbook/package-installation) you install in the same way like at `pnpm` with one difference, you have to use flag `--filter` to define in which workspace you want to install it.
+
+    ```bash copy
+        pnpm add <package-name> --filter <workspace-name>
+    ```
+    or
+
+    ```bash copy
+        pnpm remove <package-name> --filter <workspace-name>
+    ```
+    More about Filtering at [TurboRepo docs](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
+
+        ### Installing/Sharing workspaces
+        To install workspace in another workspace, you need to use command.<br/>
+
+        `apps/docs/package.json`
+
+        ```json copy
+        {
+            "dependencies": {
+                "packages": "workspace:*"
+            }
+        }
+        ```
+        More about sharing workspaces at [TurboRepo docs](https://turbo.build/repo/docs/handbook/workspaces#workspaces-which-depend-on-each-other)
+
+        ### Dependencies vs devDependencies vs peerDependencies
+        Dependencies are packages that are required for the project to run.<br/>
+        devDependencies are packages that are required for the project to run in development.<br/>
+        peerDependencies are packages that are required for the project to run in production.<br/>
+
+        |                   | Required to run   | to run in development  | to run in production |
+        |   ---             | ---               | ---                    | ---                  |
+        | Dependencies      | ✔️               | ❌                    | ❌                   |
+        | devDependencies   | ❌               | ✔️                    | ❌                   |
+        | peerDependencies  | ❌               | ❌                    | ✔️                   |
+
+    ## Scripts `package.json`
+    Scripts are commands that you can run in your terminal to execute a specific task stored at `package.json`.<br/>
+    With TurboRepo you can run scripts at all workspaces at once using `turbo` .<br/>
+
+    So you dont have to go to every workspace and run the same command.<br/>
+
+    ```bash copy
+        turbo pnpm dev
+    ```
+    runs `dev` script at every workspace.
+    <Callout type="warning" emoji="⚠️">
+        To run scripts at every workspace, you need to have the same script at `package.json` every workspace.
+        If one of Workspaces doesnt have the script, it will ignore it.
+    </Callout>
+
+    More about scripts at [TurboRepo docs](https://turbo.build/repo/docs/handbook/dev)
+
+        ### Our `package.json` scripts
+        There we will explain how we use scripts at our project.
+        `package.json`
+
+        ```json
+            SCRIPTS.JSON - Add later
+        ```
+
+
+    ## Code Generation
+    TurboRepo has builded-in generators and custom generator (plop).<br/>
+    You can generate/copy workspace
+
+    Add empty workspace:
+
+    ```bash copy
+        turbo gen workspace --name <workspace-name>
+    ```
+
+    Copy workspace:
+
+    ```bash copy
+        turbo gen workspace --copy --name <workspace-name-to-copy>
+    ```
+    Examples from [TurboRepo docs](https://turbo.build/repo/docs/core-concepts/monorepos/code-generation#examples)
+
+        ### Custom Generators
+        It's one of the most important features of TurboRepo - [plop](https://www.npmjs.com/package/plop) (It's not TurboRepo own package, its implemented).<br/>
+        With custom generators you can generate files/folders from templates.<br/>
+        It helps us to make standards and improve. <br/>
+        <Callout>
+            Note: While Turborepo Generators are built on top of Plop, they do not require plop to be installed as a dependency in your repo.
+        </Callout>
+
+        More about writing custom generators at [TurboRepo docs](https://turbo.build/repo/docs/core-concepts/monorepos/code-generation#writing-generators)
+
+    ## ChangeLogs
+    After every change, you need to update changelog.<br/>
+    We use `ChangeSet` to generate changelogs.<br/>
+    More about `ChangeSet` at [They Docs](https://github.com/changesets/changesets#documentation)
+    More about creating ChangeLogs at our [Docs](/constributing/Layers/enviroment#changelogs)
+
+    ## .Github
+    In `.github` folder we store all github related files (Configs and templates).<br/>
+
+    ### Github Issues Template
+    We use Github Issues Template to make sure that every issue has all needed information.<br/>
+    It's also helps us to make sure that every issue is in the right place.<br/>
+
+    You can find them at `.github/ISSUE_TEMPLATE` folder.<br/>
+
+    More about Github Issues Template at [Github Docs](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue-template-for-your-repository)
+
+        ### .githubignore
+        To do not push files to github repo, we use `.githubignore` file.<br/>
+        Use it to block files which are installed by package managers, caches, logs or super secrets.<br/>
+
+        ### Github hooks
+        We use Github hooks to automate our workflow (pre-commit for example).<br/>
+
+        ### Github Actions (CI/CD)
+        We use Github Actions to automate our workflow.<br/>
+        It's our final tester,builder and deployer.<br/>
+
+        On github you can see that last commit passed all tests and was deployed or not.<br/>
+        It's last and most important step of our workflow because if did not pass commit it not gonna be merged.<br/>
+
+        You can find them at `.github/workflows` folder.<br/>
+
+        More about Github Actions at [Github Docs](https://docs.github.com/en/actions)
+
+        ### Github Pull Request Template
+        We use Github Pull Request Template to make sure that every pull request has all needed information.<br/>
+        It's also helps us to make sure that every pull request is in the right place.<br/>
+
+        You can find them at `.github/pull_request_template.md`<br/>
+
+        More about Github Pull Request Template at [Github Docs](https://docs.github.com/en/github/building-a-strong-community/creating-a-pull-request-template-for-your-repository)
+
+    ## Eslint (Linter)
+    We use Eslint to lint our code (Detect code errors and style problems).<br/>
+    It's helps us to make sure that our code is clean and readable.<br/>
+
+    <Callout type="warning" emoji="⚠️">
+        With Every Eslint rule change you have to update whole project to pass pre-commit, so start on [Github Discuss]() to be sure that's worth.
+    </Callout>
+
+    We use [Flat Config]() to configure Eslint.<br/>
+
+    Eslint basicly works only with JS, we did install extra plugins for additional rules which can lint TS, YML, JSX and more.
+        ### Recommendation
+        We recommend to read Eslint Rules, check how we configure our config with his rules and plugins and in full understanding start coding.
+
+        ### Flat config viewer
+        Best way to edit Eslint rules is to use [eslint-flat-config-viewer](https://github.com/antfu/eslint-flat-config-viewer). <br/>
+        It's amazing tool which helps you to supervise which plugins are use in, which rules are used,deprecated and how setted <br/>
+
+        <img src="https://private-user-images.githubusercontent.com/11247099/271454257-f386563a-c655-458e-a2c3-0af19ebec958.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDIwNzc5MjYsIm5iZiI6MTcwMjA3NzYyNiwicGF0aCI6Ii8xMTI0NzA5OS8yNzE0NTQyNTctZjM4NjU2M2EtYzY1NS00NThlLWEyYzMtMGFmMTllYmVjOTU4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzEyMDglMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMxMjA4VDIzMjAyNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTJlNTE1OTUzOGE0ZjQ2M2JjNmIwMDIxZGE4MDM0MWJkNzQ5MzAwMmM1ZTc1ZTU2MDA4YjczM2FlNjI3M2QyYWYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.dt9yRRxz2lmsHnX9DxUbgxVsfbGP9oM5iMZ2wis821s" alt="flat config viewer" />
+
+        To start Server
+        ```bash copy
+        npx eslint-flat-config-viewer
+        ```
+
+        ### Plugins we use
+        - [typescript-eslint]() - Lint TS
+        - [Stylistic]() - Lint code style
+        - [eslint-plugin-optimize-regex]() - Optimize regex
+        - [eslint-plugin-pii]() - Remove every secret data like emails,tokens etc
+        - [eslint-plugin-security]() - Protect from security issues
+        - [eslint-plugin-xss]() - Protect from XSS
+        - [eslint-plugin-yml]() - Lint YML
+        - [eslint-plugin-mdx]() - Lint JSX
+
+    ## Husky (Github Hooks handler)
+    We use Husky to handle Github Hooks.<br/>
+
+    To edit Husky you have to go to `.husky` folder.<br/>
+
+        ### Precommit
+        We use precommit to run tests and lint code before every commit to be sure everything is okay.<br/>
+
+    ## Lint-staged (Automated scripts process)
+    We use lint-staged to run scripts in the right order before precommit.<br/>
+    His config you can find in `package.json`
+
+    ## Prettier (Code formatter)
+    We use Prettier to format our code, make it same format at all files in Repo.<br/>
+    His config you can find in `package.json` file.<br/>
+    Ignored files to format are in `.prettierignore` file.<br/>
+    <Callout type="warning" emoji="⚠️">
+        Dont forget! Prettier is not a linter, it's only formatter and it have to obey linter rules.
+        Recommend to not to change.
+    </Callout>

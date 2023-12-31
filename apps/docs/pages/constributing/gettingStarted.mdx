@@ -1,0 +1,383 @@
+import { Cards, Card, Tabs, FileTree, Steps, Callout } from "nextra/components";
+
+# Getting Started
+
+There you can find introduction to the project, how project is build,works and more.
+
+    ## Setup Project
+    <Callout type="warning" emoji="⚠️">
+        PNPM is required to install dependencies. If you don't have it, install it with `npm i -g pnpm`.
+    </Callout>
+
+    <Steps>
+        ### Download the project
+
+        ```bash copy
+            git clone https://github.com/ineedjet/fluidui.git ./fluidui
+        ```
+
+        ### Install Dependencies
+
+        ```bash copy
+            cd fluidui
+            pnpm i
+        ```
+        ### Run Project!
+        Right now you can run project by using `pnpm dev` command.
+        (For more scripts check [Enviroment](/layers/enviroment)))
+
+        ```bash copy
+            pnpm dev
+        ```
+    </Steps>
+
+    ## Tech Stack
+
+    <Cards>
+        <Card icon={""} title="TurboRepo" href="https://turbo.build/repo" />
+        <Card icon={""} title="ChangeSet" href="/docs/guide/built-ins/steps" />
+        <Card icon={""} title="Plop" href="/docs/guide/built-ins/steps" />
+        <Card icon={""} title="Eslint" href="/docs/guide/built-ins/steps" />
+        <Card icon={""} title="React" href="/docs/guide/built-ins/tabs" />
+        <Card icon={""} title="Typescript" href="/docs/guide/built-ins/callout" />
+        <Card icon={""} title="ZOD" href="/docs/guide/built-ins/callout" />
+        <Card icon={""} title="Storybook" href="/docs/guide/built-ins/steps" />
+        <Card icon={""} title="Nextra" href="/docs/guide/built-ins/steps" />
+        <Card icon={""} title="Tsup" href="/docs/guide/built-ins/steps" />
+    </Cards>
+
+    <Tabs items={["TurboRepo","ChangeSet","Plop","Eslint","React","Typescript","ZOD","Storybook","Nextra","Tsup"]}>
+        <Tabs.Tab>
+            ### TurboRepo (Monorepo handler)
+            TurboRepo is a tool that allows you to manage multiple packages in a single repository.
+
+            We decided to set our monorepo (Package, Documentation,Storybook etc) on TurboRepo<br/>
+            to make it easier in maintaining.
+
+            ```yaml
+                + Easier in Maintaining
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ### ChangeSet (Versioning handler)
+            ChangeSet is a tool that handles versioning and changelog for your project.
+
+            To make cleaner and easier in handling versioning of packages we decide on Changeset.<br/>
+            Changeset is a tool which helps you with managing your versioning and changelog.
+
+
+            ```yaml
+                + Readable versioning
+                + Easy Documenting
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ### Plop (Template generator)
+            Plop is a tool that allows you to generate templates for your project.
+
+            With PLOP we can easier and faster build new things (ex. components) because is useful tool to make folder & files templates
+
+            ```yaml
+                + Faster building
+                + Easier to maintain standard
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ### Eslint (Linter)
+            Eslint is a tool that Lints your code to make it less bugged (helps in find them) and promote coding standards.
+
+            We use this linter to improve our code quality.
+
+            ```yaml
+                + Quality of code
+                + Easier to find bugs
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ### React (Library)
+            React is our
+
+            ```yaml
+                + Quality of code
+                + Easier to find bugs
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ### Typescript (Language)
+            Typesctipt is a language that helps you in typesafety and more.
+
+            Typesafety and easy hints is one of the most important things in our package.
+            With them using our package and developing them is easier, safer and faster.
+
+            ```yaml
+                + Typesafety
+                + Easy hints for constributors
+                + Easy hints for end developers
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ### ZOD (Validation)
+            ZOD is a tool that allows you to check types of input users and valide them.
+
+            We use ZOD to validate inputs and make sure that they are correct.
+
+            ```yaml
+                + Automatically create types/interfaces
+                + Allows to validate input
+                + Allow to setup default values
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ### Storybook (SandBox/Documentation)
+            Storybook is a SandBox that allows you to build components in and document them.
+            End Developers can also use it to see how components works.
+
+            Documentation/sandbox for components, good for constributors and end developers to easier understand how they work.
+
+            ```yaml
+                + Easy to build components
+                + Easy to document components
+                + Easy to understand components
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ### Nextra (Documentation handler)
+            Nextra allow us to build documentation in MD/MDX format.
+
+            We use Nextra to build faster documentation pages.
+
+            ```yaml
+                + Easy to build documentation
+                + Easy to maintain documentation
+                + High Customizable
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ### Tsup (Module bundler)
+            Tsup is a tool that allows you to bundle your code in final package to publish (npm).
+
+            ```yaml
+                + Optimised Builds
+            ```
+        </Tabs.Tab>
+    </Tabs>
+
+
+
+
+    ## Tools
+
+    <Cards>
+        <Card icon={""} title="Cursor.so" href="/docs/guide/built-ins/steps" />
+        <Card icon={""} title="PostMan" href="/docs/guide/built-ins/steps" />
+        <Card icon={""} title="Figma" href="/docs/guide/built-ins/steps" />
+    </Cards>
+
+    <Tabs items={["Cursor.so","PostMan","Figma"]}>
+        <Tabs.Tab>
+            ### Cursor.so (IDE / VSCode ALTERNATIVE)
+            Cursor.so is a IDE with build-in AI.
+
+            We use Cursor.so to improve our productivity, AI helps us in Coding and Understand Documentation (AI can load documentation and work with them).
+            Also support all VSCODE extensions.
+
+            ```yaml
+                + AI
+                + Productivity
+                + VSCode Extensions Support
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ### PostMan (API Testing)
+            PostMan is a tool that allows you to test API and save them.
+
+            We use PostMan to test API and make sure that they are working correctly.
+
+            ```yaml
+                + Easy to test API
+                + Easy to maintain API
+            ```
+        </Tabs.Tab>
+        <Tabs.Tab>
+            ### Figma (Design)
+            Figma is a tool that allows you to design UI.
+
+            We use Figma to design UI and make sure that they are working correctly.
+
+            ```yaml
+                + Easy to design UI
+                + Easy to maintain UI
+            ```
+        </Tabs.Tab>
+    </Tabs>
+
+    ## VSCode Extensions
+    This is a list of recommended VSCode extensions that were used in this project to make it more comfortable.
+    <Cards>
+        <Card icon={""} title="Cursor.so" href="/docs/guide/built-ins/steps" />
+        <Card icon={""} title="PostMan" href="/docs/guide/built-ins/steps" />
+        <Card icon={""} title="Figma" href="/docs/guide/built-ins/steps" />
+    </Cards>
+
+    <Tabs items={["Cursor.so","PostMan","Figma"]}>
+        <Tabs.Tab>
+
+        </Tabs.Tab>
+        <Tabs.Tab>
+
+        </Tabs.Tab>
+        <Tabs.Tab>
+
+        </Tabs.Tab>
+    </Tabs>
+
+
+
+
+    ## Folder & Files Structure
+    <Callout type="warning" emoji="⚠️">
+        This is not a full structure, this is only a part of it.
+    </Callout>
+
+    <Tabs items={['Enviroment','Configs','Apps','Packages']}>
+        <Tabs.Tab>
+            ### Enviroment
+            This is top/main folder of project.
+            Here you can find all files (configs,Readme etc) and our configs, apps and packages.
+
+            In our project we use TurboRepo to manage our packages, apps and configs.
+            `apps`,`config`,`packages` are folders that are managed by TurboRepo as workspace, so everycontent in them are packages which can be shared between workspaces.
+
+
+            <FileTree>
+                <FileTree.Folder name="apps" defaultOpen>
+                        <FileTree.Folder name="docs">
+                            <FileTree.File name="pages" />
+                        </FileTree.Folder>
+                        <FileTree.Folder name="web">
+                            <FileTree.File name="pages" />
+                        </FileTree.Folder>
+                    </FileTree.Folder>
+                    <FileTree.Folder name="config">
+                        <FileTree.Folder name="eslint-custom">
+                        </FileTree.Folder>
+                        <FileTree.Folder name="tsconfig">
+                            <FileTree.File name="base.json" />
+                            <FileTree.File name="fluidui.json" />
+                            <FileTree.File name="nextjs.json" />
+                            <FileTree.File name="react-library.json" />
+                        </FileTree.Folder>
+                </FileTree.Folder>
+                <FileTree.Folder name="packages">
+                </FileTree.Folder>
+                <FileTree.File name=".gitignore" />
+                <FileTree.File name=".npmrc" />
+                <FileTree.File name=".prettierignore" />
+                <FileTree.File name="package.json" />
+                <FileTree.File name="pnpm-workspace.yaml" />
+                <FileTree.File name="tsconfig.json" />
+                <FileTree.File name="turbo.json" />
+            </FileTree>
+        </Tabs.Tab>
+        <Tabs.Tab>
+
+            ### Configs
+            This folder contains all configs used in project.
+
+            <FileTree>
+                <FileTree.Folder name="eslint-custom" defaultOpen>
+                    <FileTree.File name="index.js" />
+                </FileTree.Folder>
+                <FileTree.Folder name="tsconfig" defaultOpen>
+                    <FileTree.File name="base.json" />
+                    <FileTree.File name="fluidui.json" />
+                    <FileTree.File name="nextjs.json" />
+                    <FileTree.File name="react-library.json" />
+                </FileTree.Folder>
+            </FileTree>
+
+            #### base.json
+            This is a base config for typescript, it's used in all packages.
+
+            #### Other configs
+            Other configs are used in specific packages, for example `fluidui.json` is used in `fluidui` package.
+            Every of them is including `base.json`.
+        </Tabs.Tab>
+        <Tabs.Tab>
+
+            ### Apps
+            This folder contains all apps/websites used in project (Docs for example).
+
+            <FileTree>
+                <FileTree.Folder name="docs" defaultOpen>
+                    <FileTree.File name="pages" />
+                </FileTree.Folder>
+                <FileTree.Folder name="web" defaultOpen>
+                    <FileTree.File name="pages" />
+                </FileTree.Folder>
+            </FileTree>
+        </Tabs.Tab>
+        <Tabs.Tab>
+
+            ### Packages
+            This folder contains all packages used in project.
+        </Tabs.Tab>
+
+    </Tabs>
+
+
+    ## Code Rules
+
+
+    - <abbr title="Keep it simple stupid">KISS</abbr>
+    - <abbr title="Don't repeat yourself">DRY</abbr>
+    - High Customizable Component
+    - Compound Components
+    - No Comments
+    - Clean Imports
+
+    ## Implementation Process
+    <Steps>
+        ### Write Documentation
+        On start we are creating documentation to make sure that we know what we want to do.
+
+        ### Write Tests
+        TDD is a good way to write code, so we use it to write tests before code.
+
+        ### Write Code
+        Write code that pass tests.
+
+        ### Improve Documentation
+        After writing code we are improving documentation to make sure that it's up to date.
+
+        ### ChangeLogs
+        Use ChangeSet to create changelogs for your changes.
+
+        ### Commit
+        Commit your changes.
+
+    </Steps>
+    ## FAQ
+    <details>
+        <summary>Turborepo</summary>
+        FluidUI is not just a package, it's a project including everything around.
+    </details>
+    <details>
+        <summary>How can I contribute?</summary>
+        You can contribute by coding, designing, translating, video editing, and more. Choose a role that suits you best!
+    </details>
+    <details>
+        <summary>How to start?</summary>
+        Choose a role that suits you best and start introducing by Page in `Roles` at docs!
+    </details>
+    <details>
+        <summary>Where can I find help?</summary>
+        You can find help on our Discord server, where you can ask questions and get assistance with any issues you encounter.
+    </details>
+
+    ## Find tasks
+    <Cards>
+        <Card icon={""} title="RoadMap" href="/docs/guide/built-ins/steps" />
+        <Card icon={""} title="Issues" href="/docs/guide/built-ins/steps" />
+    </Cards>

@@ -1,0 +1,179 @@
+import { Cards, Card, Tabs } from "nextra/components";
+
+# useButton
+
+useButton is a hook that allows you to create a button with builded in **functionality**
+
+<Cards>
+  <Card icon={""} title="Source Code" href="/docs/guide/built-ins/callout" />
+  <Card icon={""} title="NPM" href="/docs/guide/built-ins/tabs" />
+  <Card icon={""} title="Steps" href="/docs/guide/built-ins/steps" />
+</Cards>
+
+## Importing
+
+<Tabs items={["Core", "Invidual"]}>
+  <Tabs.Tab>```ts import {useButton} from '@fluidUI/core'; ```</Tabs.Tab>
+  <Tabs.Tab>```ts import {useButton} from '@fluidUI/useButton'; ```</Tabs.Tab>
+</Tabs>
+
+## Functionality
+
+    - Default Props
+    - Cooldown
+    - Time Events
+    - States
+    - WAI-ARIA (I18n)
+
+## Accessibility
+
+```ts
+    {
+        children:"Button",
+        tag:"button",
+
+        type:"button",
+
+        isLoading:false,
+        isTimmed:false,
+        isCooldown:false,
+        isExecuting:false,
+        isDisabled:false,
+    }
+```
+
+## API
+
+    ### Default Props
+    Key       | Value
+    --------- | ---------
+    children  | Button
+    tag       | button
+    whenDisabledText | -
+
+    ### States
+    State       | Default   |  Description
+    ---------   | -----     | ---------
+    isLoading   | false     |  When the button is loading
+    isTimmed    | false     |  When the button is on timmer
+    isCooldown  | false     |  When the button is on cooldown
+    isExecuting | false     |  When the button is executing a function
+    isDisabled  | false     |  When the button is disabled
+
+    ### Props
+    Key                | Value      | Type
+    ------------------ | ---------- | ---------
+    children           | -          | ReactNode
+    tag                | -          | string
+    type               | -          | string
+    onClick            | -          | function
+    onNotClick         | -          | function
+    cooldown           | -          | number
+    time               | -          | number
+    refreshTime        | -          | number
+    cooldownUnit       | -          | 'ms' | 's' | 'm' | 'h'
+    timeUnit           | -          | 'ms' | 's' | 'm' | 'h'
+    whenDisabledText   | -          | string
+    isLoadingText      | -          | string
+    isTimmedText       | -          | string
+    isCooldownText     | -          | string
+    isExecutingText    | -          | string
+    isDisabledText     | -          | string
+    isLoading          | -          | boolean
+    isTimmed           | -          | boolean
+    isCooldown         | -          | boolean
+    isExecuting        | -          | boolean
+    isDisabled         | -          | boolean
+
+## Usage
+
+### Cooldown
+
+Cooldown adds new functionality to the button, which allows you to create a button that will be disabled for a certain
+time after clicking.
+
+#### default Props
+
+    Key         | Value
+    ---------   | ---------
+    cooldown    | 0
+    refreshTime | 1000
+    cooldownUnit| 'ms'
+
+#### Usage
+
+    key         | value
+    ---------   | ---------
+    cooldown    | 120
+    cooldownUnit| 's'
+
+    ```mermaid
+        graph LR
+        A[Render element] -- Click --> B(Cooldown time start 120s)
+    ```
+
+### Time Events
+
+Time Events adds new functionality to the button, which allows you to create a button that will be disabled after a
+certain time, or will execute a function after a certain time.
+
+#### default Props
+
+    Key         | Value
+    ---------   | ---------
+    time        | 0
+    refreshTime | 1000
+    timeUnit    | 'ms'
+    onNotClick  | undefined
+
+#### Usage
+
+<Tabs items={['Time to react', 'Time to Action', 'Time of choice']}>
+    <Tabs.Tab>
+        `Time to react` is event in which you have to click the button in a certain time.
+        Key       | Value 
+        --------- | --------- 
+        time      | 120
+        timeUnit  | 's'
+
+        ```mermaid
+            graph LR
+            A[Render element] -- Times go to 0 --> B(isDisabled:true)
+            A -- Click in time --> C(OnClick)
+            C --> B
+        ```
+    </Tabs.Tab>
+    <Tabs.Tab>
+     `Time to Action` is event which activate `onClick` after a certain time.
+
+        Key       | Value
+        --------- | ---------
+        time      | 120
+        timeUnit  | 's'
+
+        ```mermaid
+            graph LR
+            A[Render element] -- Time go to 0 --> C(OnClick)
+            A -- Click  --> C
+            C --> B(isDisabled:true)
+        ```
+    </Tabs.Tab>
+    <Tabs.Tab>
+        `Time of choice` is event which activate `onNotClick` after a certain time, in time onClick is Avaible.
+        ### default Props
+        Key       | Value
+        --------- | ---------
+        time      | 120
+        timeUnit  | 's'
+        onNotClick| () => console.log('Not Clicked')
+
+        ```mermaid
+            graph LR
+            A[Render element] -- Time go to 0 --> B(OnNotClick)
+            A -- Click in time  --> C(OnClick)
+            C --> D(isDisabled:true)
+            B --> D
+        ```
+    </Tabs.Tab>
+
+</Tabs>

@@ -1,12 +1,22 @@
 {
   "name": "docs",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "echo 'Add build script here'",
-    "dev": "echo 'Add dev script here'",
+    "build": "next build",
+    "dev": "next",
     "lint": "echo 'Add lint script here'",
+    "start": "next start",
     "test": "echo 'Add test script here'"
+  },
+  "dependencies": {
+    "@theguild/remark-npm2yarn": "^0.3.0",
+    "next": "^13.4.19",
+    "nextra": "^2.13.2",
+    "nextra-theme-docs": "^2.13.2",
+    "npm-to-yarn": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "tsconfig": "workspace:*"
