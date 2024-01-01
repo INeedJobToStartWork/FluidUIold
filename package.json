@@ -4,16 +4,19 @@
   "type": "module",
   "scripts": {
     "build": "turbo build",
+    "comm": "git add . && git cz",
+    "comm:remove": "git reset HEAD~1",
     "dev": "turbo dev --parallel",
     "format": "pnpm prettier . --write && pnpm prettier . --check",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "pre": "git add . && lint-staged",
     "prepare": "husky install",
-    "push": "cz",
     "start": "turbo start"
   },
   "lint-staged": {
     "*": [
+      "git add .",
       "pnpm format",
       "pnpm lint:fix",
       "pnpm lint"

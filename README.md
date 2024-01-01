@@ -9,7 +9,6 @@
 
 ![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/dc7bfe7d-ec7b-4ea4-aaaf-d03a114cb803)
 
-
 <div align="center">
   <a href="example.com">
     Documents
@@ -21,13 +20,10 @@
 
 ![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/54ab07f3-6f0a-42e9-836c-cf96b816a559)
 
-
 <div align="center"><a href="CONSTRIBUTING.md">CONSTRIBUTING.md</a></div>
 
 ![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/ab645f34-0f1a-49c6-84bd-6301fa8d26f4)
 
-
 <div align="center"><a href="https://github.com/users/INeedJobToStartWork/projects/5/views/1?pane=issue&itemId=47071571">RoadMap</a></div>
 
 ![image](https://github.com/INeedJobToStartWork/FluidUI/assets/97305201/1ef36756-ef60-4084-bdcf-4023f8ce2845)
-
