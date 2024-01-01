@@ -1,12 +1,14 @@
+// import "styles.css";
+
 export default {
   logo: (
     <svg height="32" viewBox="0 0 148 148" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 148V0H148L0 148Z" fill="url(#paint0_linear_627_1255)" />
-      <path d="M25 123V62H86L25 123Z" fill="black" fill-opacity="0.2" />
+      <path d="M25 123V62H86L25 123Z" fill="black" fillOpacity="0.2" />
       <path
         d="M27 21H122.172C123.953 21 124.846 23.1543 123.586 24.4142L105.586 42.4142C105.211 42.7893 104.702 43 104.172 43H27C25.8954 43 25 42.1046 25 41V23C25 21.8954 25.8954 21 27 21Z"
         fill="black"
-        fill-opacity="0.1"
+        fillOpacity="0.1"
       />
       <defs>
         <linearGradient
