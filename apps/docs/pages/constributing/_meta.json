@@ -1,9 +1,9 @@
 {
-  "Layers": "Layers of Project",
+  "index": "Introduction",
   "Roles": "Roles",
+  "Layers": "Layers of Project",
+  "gettingStarted": "Getting Started",
   "commiting": "Commiting",
   "discusses": "Github",
-  "gettingStarted": "Getting Started",
-  "index": "Introduction",
   "pttrns": "Code Patterns"
 }

@@ -1,5 +1,11 @@
 # docs
 
+## 0.1.2
+
+### Patch Changes
+
+- constributing/commiting.mdx commit fix
+
 ## 0.1.1
 
 ### Patch Changes
