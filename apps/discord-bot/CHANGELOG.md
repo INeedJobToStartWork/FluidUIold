@@ -1,5 +1,11 @@
 # discord-bot
 
+## 0.4.1
+
+### Patch Changes
+
+- Fix code to work with linter
+
 ## 0.4.0
 
 ### Minor Changes

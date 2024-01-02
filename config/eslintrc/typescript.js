@@ -32,7 +32,8 @@ export default [
       "@stylistic/plus/type-generic-spacing": ["error"],
       "@stylistic/plus/type-named-tuple-spacing": ["error"],
       "@stylistic/ts/block-spacing": ["error", "always"],
-      "@stylistic/ts/brace-style": ["error", "allman", { allowSingleLine: true }],
+      "@stylistic/ts/brace-style": ["error", "stroustrup", { allowSingleLine: true }],
+      // "@stylistic/ts/brace-style": ["error", "allman", { allowSingleLine: true }],
       "@stylistic/ts/comma-dangle": "error",
       "@stylistic/ts/comma-spacing": ["error", { after: true, before: false }],
 
@@ -43,7 +44,7 @@ export default [
       "@stylistic/ts/space-before-function-paren": "error",
       "@stylistic/ts/type-annotation-spacing": [
         "error",
-        { after: false, before: false, overrides: { arrow: { after: true, before: true } } }
+        { after: true, before: false, overrides: { arrow: { after: true, before: true } } }
       ],
       "@typescript-eslint/adjacent-overload-signatures": "error",
       "@typescript-eslint/array-type": ["error", { default: "array-simple" }],
@@ -92,7 +93,7 @@ export default [
       "@typescript-eslint/no-misused-new": "error",
       "no-extraneous-class": "off",
       "@typescript-eslint/no-misused-promises": "error",
-      "@typescript-eslint/no-namespace": "error",
+      "@typescript-eslint/no-namespace": ["error", { allowDeclarations: true }],
       "no-implied-eval": "off",
       "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
       "@typescript-eslint/no-non-null-asserted-optional-chain": "error",

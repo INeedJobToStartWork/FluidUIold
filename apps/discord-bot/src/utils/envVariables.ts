@@ -8,7 +8,8 @@ const envSchema = z.object({
 
 declare global {
   module NodeJS {
-    export interface ProcessEnv extends z.infer<typeof envSchema> {}
+    // @ts-expect-error - ProcessEnv is default defined but we want to override it
+    export type ProcessEnv = z.infer<typeof envSchema>;
   }
 }
 

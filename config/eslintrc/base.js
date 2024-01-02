@@ -3,13 +3,29 @@ import EslintOptRegConf from "eslint-plugin-optimize-regex";
 import EslintPii from "eslint-plugin-pii";
 import EslintSecurity from "eslint-plugin-security";
 import EslintSortKeys from "eslint-plugin-sort-keys-fix";
+import globals from "globals";
 
 export default [
-  { ignores: ["**/.vscode/**", "**/.next/**", "**/config/**", "**/node_modules/**", "**/dist/**"] },
   {
+    ignores: [
+      "**/.vscode/**",
+      "**/.next/**",
+      "**/config/**",
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/*.d.ts",
+      "**/tsconfig.json",
+      "**/theme.config.jsx"
+    ]
+  },
+  {
+    files: ["**/*.js", "**/*.jsx", "**/*.mjs", "**/*.ejs", "**/*.ts", "**/*.tsx", "**/*.mts", "**/*.ets"],
     languageOptions: {
       ecmaVersion: "latest",
-      sourceType: "module"
+      sourceType: "module",
+      globals: {
+        ...globals.node
+      }
     },
     name: "Default",
     plugins: {
@@ -225,7 +241,7 @@ export default [
       "@stylistic/js/block-spacing": ["error", "always"],
 
       "sort-imports": "warn",
-      "@stylistic/js/brace-style": ["error", "allman", { allowSingleLine: true }],
+      "@stylistic/js/brace-style": "off",
       "sort-vars": "off",
       "@stylistic/js/comma-dangle": ["error", "never"],
       strict: "off",

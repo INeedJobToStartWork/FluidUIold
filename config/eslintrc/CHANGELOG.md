@@ -1,5 +1,11 @@
 # eslintrc
 
+## 0.2.1
+
+### Patch Changes
+
+- Fix code to work with linter
+
 ## 0.2.0
 
 ### Minor Changes
