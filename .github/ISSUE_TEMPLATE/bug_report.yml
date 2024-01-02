@@ -43,7 +43,7 @@ body:
       label: Tested on Latest Version
       description: Check if this issue is reproducible with the latest version - it could be fixed.
       options:
-        - label: Yes
+        - label: "Yes"
   - type: dropdown
     id: browser
     attributes:
