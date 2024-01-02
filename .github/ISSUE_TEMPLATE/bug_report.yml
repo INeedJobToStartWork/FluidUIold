@@ -3,8 +3,6 @@ title: "🐞[BUG] - <TITLE_OF_ISSUE>"
 description: Create new report!
 labels: [bug]
 body:
-options:
-label: Bug report
   - type: markdown
     attributes:
       value: |
@@ -23,7 +21,6 @@ label: Bug report
 
         Please fill in as much of the template below as you're able. If you don't know the answer to a question, that's okay, but please try to fill in as much as you can.
         It'll help us to triage your issue as quickly as possible.
-
   - type: input
     id: description
     attributes:
@@ -32,7 +29,6 @@ label: Bug report
       placeholder: Description title
     validations:
       required: true
-
   - type: input
     id: fluidui_version
     attributes:
@@ -41,7 +37,6 @@ label: Bug report
       placeholder: e.g. v0.5.0
     validations:
       required: true
-
   - type: checkboxes
     id: fluidui_latest
     attributes:
@@ -49,7 +44,6 @@ label: Bug report
       description: Check if this issue is reproducible with the latest version - it could be fixed.
       options:
         - label: Yes
-
   - type: dropdown
     id: browser
     attributes:
@@ -65,7 +59,6 @@ label: Bug report
         - "Other"
     validations:
       required: true
-
   - type: dropdown
     id: os
     attributes:
@@ -80,7 +73,6 @@ label: Bug report
         - "Other"
     validations:
       required: true
-
   - type: dropdown
     id: layer
     attributes:
@@ -97,7 +89,6 @@ label: Bug report
         - "Storybook"
     validations:
       required: true
-
   - type: dropdown
     id: role
     attributes:
@@ -110,7 +101,6 @@ label: Bug report
         - "Translator"
     validations:
       required: true
-
   - type: input
     id: reproductionLink
     attributes:
@@ -118,7 +108,6 @@ label: Bug report
       description: Please provide a link to a reproduction on Github, CodeSandbox or StackBlitz.
       placeholder: |
         e.g. https://github.com/fluidui-org/xxx
-
   - type: textarea
     id: reproductionProcess
     attributes:
@@ -126,43 +115,36 @@ label: Bug report
       description: Please provide steps to reproduce the bug.
       placeholder: |
         e.g. https://github.com/fluidui-org/xxx
-
   - type: textarea
     id: reproductionImages
     attributes:
       label: Photo/Images Showing Bug
       description: If applicable, please provide screenshots or photos showing the bug.
-
   - type: textarea
     id: reproductionLogs
     attributes:
       label: Logs
       description: If applicable, please provide logs showing the bug (if exists).
-
   - type: textarea
     id: expectedBehavior
     attributes:
       label: What we got - What we expected
       description: What did you expect to happen? What happened instead?
-
   - type: textarea
     id: additionalContext
     attributes:
       label: Additional Context
       description: Please provide any additional information here. What did you wanted to do?
-
   - type: textarea
     id: triedFix
     attributes:
       label: What did you try to fix it?
       description: What did you try to fix it? Every information is useful.
-
   - type: textarea
     id: howSolved
     attributes:
       label: How did you solve it?
       description: How did you solve it? It's okay if you didn't solve it yet.
-
   - type: textarea
     id: possibleSolution
     attributes:
