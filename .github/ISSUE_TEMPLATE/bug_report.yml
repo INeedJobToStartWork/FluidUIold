@@ -3,6 +3,8 @@ title: "🐞[BUG] - <TITLE_OF_ISSUE>"
 description: Create new report!
 labels: [bug]
 body:
+  options:
+    label: Bug report
   - type: markdown
     attributes:
       value: |
