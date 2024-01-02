@@ -1,0 +1,168 @@
+name: "Bug report"
+title: "🐞[BUG] - <TITLE_OF_ISSUE>"
+description: Create new report!
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a bug to FluiUI! 🙏
+
+        If you have a question about how to achieve something and are struggling, please post a question
+        inside of either of the following places:
+          - FluidUI's 💬[Discussion's tab]()
+          - FluidUI's 🤖[Discord channel]()
+
+        Before submitting a new bug/issue, please check the links below to see if there is a solution or question posted there already:
+          - NextUI's [Issue's tab](https://github.com/nextui-org/nextui/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc)
+          - NextUI's [closed issues tab](https://github.com/nextui-org/nextui/issues?q=is%3Aissue+sort%3Aupdated-desc+is%3Aclosed)
+          - NextUI's [Discussions tab](https://github.com/nextui-org/nextui/discussions)
+
+
+        Please fill in as much of the template below as you're able. If you don't know the answer to a question, that's okay, but please try to fill in as much as you can.
+        It'll help us to triage your issue as quickly as possible.
+
+  - type: input
+    id: description
+    attributes:
+      label: Issue Description
+      description: Please give a short description of the issue
+      placeholder: Description title
+    validations:
+      required: true
+
+  - type: input
+    id: fluidui_version
+    attributes:
+      label: FluidUI Version
+      description: Which FluidUI version are you using?
+      placeholder: e.g. v0.5.0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: fluidui_latest
+    attributes:
+      label: Tested on Latest Version
+      description: Check if this issue is reproducible with the latest version - it could be fixed.
+      options:
+        - label: Yes
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: Which browser are you using?
+      options:
+        - "Chrome"
+        - "Opera"
+        - "Firefox"
+        - "Safari"
+        - "Edge"
+        - "Brave"
+        - "Other"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: On which operating system you had this issue?
+      options:
+        - "Windows"
+        - "MacOS"
+        - "Linux"
+        - "Android"
+        - "iOS"
+        - "Other"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Layer of Project
+      description: Which layer of project issue is related to?
+      options:
+        - "Socials"
+        - "Create Design System (TUT)"
+        - "Discord Bot"
+        - "Enviroment (Monorepo)"
+        - "FluidCLI"
+        - "Package"
+        - "Docs"
+        - "Storybook"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Roles
+      description: Who would be useful?
+      options:
+        - "Design"
+        - "Video Editor / Creator"
+        - "Programmer"
+        - "Translator"
+    validations:
+      required: true
+
+  - type: input
+    id: reproductionLink
+    attributes:
+      label: Reproduction
+      description: Please provide a link to a reproduction on Github, CodeSandbox or StackBlitz.
+      placeholder: |
+        e.g. https://github.com/fluidui-org/xxx
+
+  - type: textarea
+    id: reproductionProcess
+    attributes:
+      label: Process to Reproduce bug
+      description: Please provide steps to reproduce the bug.
+      placeholder: |
+        e.g. https://github.com/fluidui-org/xxx
+
+  - type: textarea
+    id: reproductionImages
+    attributes:
+      label: Photo/Images Showing Bug
+      description: If applicable, please provide screenshots or photos showing the bug.
+
+  - type: textarea
+    id: reproductionLogs
+    attributes:
+      label: Logs
+      description: If applicable, please provide logs showing the bug (if exists).
+
+  - type: textarea
+    id: expectedBehavior
+    attributes:
+      label: What we got - What we expected
+      description: What did you expect to happen? What happened instead?
+
+  - type: textarea
+    id: additionalContext
+    attributes:
+      label: Additional Context
+      description: Please provide any additional information here. What did you wanted to do?
+
+  - type: textarea
+    id: triedFix
+    attributes:
+      label: What did you try to fix it?
+      description: What did you try to fix it? Every information is useful.
+
+  - type: textarea
+    id: howSolved
+    attributes:
+      label: How did you solve it?
+      description: How did you solve it? It's okay if you didn't solve it yet.
+
+  - type: textarea
+    id: possibleSolution
+    attributes:
+      label: How problem can be solved?
+      description: How problem can be solved? If you have any idea, please share it with us.
