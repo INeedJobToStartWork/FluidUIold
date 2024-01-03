@@ -1,4 +1,4 @@
-name: "Bug report"
+name: "🐞 Report a bug"
 title: "🐞[BUG] - <TITLE_OF_ISSUE>"
 description: Create new report!
 labels: [bug]
@@ -10,8 +10,8 @@ body:
 
         If you have a question about how to achieve something and are struggling, please post a question
         inside of either of the following places:
-          - FluidUI's 💬[Discussion's tab]()
-          - FluidUI's 🤖[Discord channel]()
+          - FluidUI's 💬[Discussion's tab](https://github.com/INeedJobToStartWork/FluidUI/discussions)
+          - FluidUI's 🤖[Discord channel](https://discord.gg/dCAkHxQ6hk)
 
         Before submitting a new bug/issue, please check the links below to see if there is a solution or question posted there already:
           - FluidUI's [Issue's tab]()
@@ -49,6 +49,7 @@ body:
     attributes:
       label: Browser
       description: Which browser are you using?
+      multiple: true
       options:
         - "Chrome"
         - "Opera"
@@ -64,6 +65,7 @@ body:
     attributes:
       label: Operating System
       description: On which operating system you had this issue?
+      multiple: true
       options:
         - "Windows"
         - "MacOS"
@@ -78,6 +80,7 @@ body:
     attributes:
       label: Layer of Project
       description: Which layer of project issue is related to?
+      multiple: true
       options:
         - "Socials"
         - "Create Design System (TUT)"
@@ -114,12 +117,18 @@ body:
       label: Process to Reproduce bug
       description: Please provide steps to reproduce the bug.
       placeholder: |
-        e.g. https://github.com/fluidui-org/xxx
+        e.g.
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
   - type: textarea
     id: reproductionImages
     attributes:
       label: Photo/Images Showing Bug
-      description: If applicable, please provide screenshots or photos showing the bug.
+      description: |
+        If applicable, please provide screenshots or photos showing the bug.
+        More about github attachments limits: https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/attaching-files.
   - type: textarea
     id: reproductionLogs
     attributes:
@@ -134,7 +143,7 @@ body:
     id: additionalContext
     attributes:
       label: Additional Context
-      description: Please provide any additional information here. What did you wanted to do?
+      description: What did you wanted to do? Please provide any additional information here.
   - type: textarea
     id: triedFix
     attributes:
@@ -149,4 +158,4 @@ body:
     id: possibleSolution
     attributes:
       label: How problem can be solved?
-      description: How problem can be solved? If you have any idea, please share it with us.
+      description: If you have any idea, please share it with us.
