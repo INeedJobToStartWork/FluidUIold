@@ -1,5 +1,11 @@
 # docs
 
+## 0.1.4
+
+### Patch Changes
+
+- remove necessary file which crash build
+
 ## 0.1.3
 
 ### Patch Changes
