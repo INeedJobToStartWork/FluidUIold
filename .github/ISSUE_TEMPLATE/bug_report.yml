@@ -97,6 +97,7 @@ body:
     attributes:
       label: Roles
       description: Who would be useful?
+      multiple: true
       options:
         - "Design"
         - "Video Editor / Creator"
