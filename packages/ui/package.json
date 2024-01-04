@@ -1,0 +1,11 @@
+{
+  "name": "fluid-core",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "build": "echo 'Add build script here'",
+    "dev": "echo 'Add dev script here'",
+    "lint": "echo 'Add lint script here'",
+    "test": "echo 'Add test script here'"
+  }
+}
