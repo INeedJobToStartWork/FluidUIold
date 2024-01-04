@@ -1,7 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "outDir": "dist",
+    "strict": true,
     "baseUrl": ".",
 
     "paths": {
@@ -9,6 +12,5 @@
     }
   },
   "exclude": ["node_modules"],
-
-  "extends": "tsconfig/discordbot.json"
+  "extends": "tsconfig/library.json"
 }

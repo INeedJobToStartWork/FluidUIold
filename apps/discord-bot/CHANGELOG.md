@@ -1,5 +1,11 @@
 # discord-bot
 
+## 0.4.2
+
+### Patch Changes
+
+- changed local tsconfig.json (module and moduleResolution moved to base.json)
+
 ## 0.4.1
 
 ### Patch Changes
