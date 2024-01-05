@@ -1,6 +1,6 @@
 name: "✨Idea - Feature Request"
 title: "✨[Idea] - <TITLE_OF_ISSUE>"
-description: Create new report!
+description: Share your ideas with us!
 labels: [feature]
 body:
   - type: markdown

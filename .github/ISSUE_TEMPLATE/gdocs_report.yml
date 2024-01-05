@@ -1,6 +1,6 @@
 name: "📘 Docs issues"
 title: "📘 [issue] - <TITLE_OF_ISSUE>"
-description: Create new report!
+description: What's wrong with our docs?
 labels: [issue]
 body:
   - type: markdown
